@@ -1,0 +1,1 @@
+mongodb+srv://mainUser:EfLmRHoKYNKgGB2h@cluster0.az56b.mongodb.net/ReactCourse?retryWrites=true&w=majority
