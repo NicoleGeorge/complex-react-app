@@ -6,7 +6,8 @@ const Home = () => {
   return (
     <Page title='your Feed'>
       <h2 className='text-center'>
-        Hello <strong>brad</strong>, your feed is empty.
+        Hello <strong>{localStorage.getItem('complexappUsername')}</strong>,
+        your feed is empty.
       </h2>
       <p className='lead text-muted text-center'>
         Your feed displays the latest posts from the people you follow. If you
