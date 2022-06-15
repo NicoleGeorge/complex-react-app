@@ -7,7 +7,7 @@ const HomeGuest = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  async function handleSubmit(e) {
+   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
       await Axios.post("http://localhost:8080/register", { username, email, password })

@@ -1,8 +1,7 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
 
-const HeaderLoggedIn = () => {
+const HeaderLoggedIn = ({ setLoggedIn }) => {
   return (
     <div className='flex-row my-3 my-md-0'>
       <Link to='#' className='text-white mr-2 header-search-icon'>
@@ -21,7 +20,12 @@ const HeaderLoggedIn = () => {
       <Link className='btn btn-sm btn-success mr-2' to='/create-post'>
         Create Post
       </Link>
-      <button className='btn btn-sm btn-secondary'>Sign Out</button>
+      <button
+        onClick={() => setLoggedIn(false)}
+        className='btn btn-sm btn-secondary'
+      >
+        Sign Out
+      </button>
     </div>
   );
 };
