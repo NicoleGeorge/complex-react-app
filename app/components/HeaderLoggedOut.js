@@ -13,7 +13,9 @@ const HeaderLoggedOut = ({ setLoggedIn }) => {
         password
       });
       if (res.data) {
-        console.log(res.data);
+        localStorage.setItem('complexappToken', res.data.token);
+        localStorage.setItem('complexappUsername', res.data.username);
+        localStorage.setItem('complexappAvatar', res.data.avatar);
         setLoggedIn(true);
       } else {
         console.log('incorrect username/password');
