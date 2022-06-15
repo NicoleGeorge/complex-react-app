@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Axios from 'axios';
+Axios.defaults.baseURL = 'http://localhost:8080';
 
 import Header from './components/Header';
 import About from './components/About';

@@ -8,7 +8,7 @@ const HeaderLoggedOut = ({ setLoggedIn }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await Axios.post('http://localhost:8080/login', {
+      const res = await Axios.post('/login', {
         username,
         password
       });
