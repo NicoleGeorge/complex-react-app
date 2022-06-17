@@ -13,6 +13,7 @@ import CreatePost from './components/CreatePost';
 import SinglePost from './components/ViewSinglePost';
 import FlashMessages from './components/FlashMessages';
 import Footer from './components/Footer';
+import ExampleContext from './ExampleContext';
 
 const Main = ({}) => {
   const [loggedIn, setLoggedIn] = useState(
@@ -26,21 +27,20 @@ const Main = ({}) => {
   };
 
   return (
-    <BrowserRouter>
-      <FlashMessages messages={flashMessages} />
-      <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-      <Routes>
-        <Route path='/' element={loggedIn ? <Home /> : <HomeGuest />} />
-        <Route
-          path='/create-post'
-          element={<CreatePost addFlashMessage={addFlashMessage} />}
-        />
-        <Route path='/post/:id' element={<SinglePost />} />
-        <Route path='/about-us' element={<About />} />
-        <Route path='/terms' element={<Terms />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <ExampleContext.Provider value={addFlashMessage}>
+      <BrowserRouter>
+        <FlashMessages messages={flashMessages} />
+        <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+        <Routes>
+          <Route path='/' element={loggedIn ? <Home /> : <HomeGuest />} />
+          <Route path='/create-post' element={<CreatePost />} />
+          <Route path='/post/:id' element={<SinglePost />} />
+          <Route path='/about-us' element={<About />} />
+          <Route path='/terms' element={<Terms />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </ExampleContext.Provider>
   );
 };
 
