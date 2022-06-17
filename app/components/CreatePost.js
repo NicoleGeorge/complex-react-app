@@ -9,7 +9,7 @@ const CreatePost = (props) => {
   const [title, setTitle] = useState();
   const [body, setBody] = useState();
   const nav = useNavigate();
-  const addFlashMessage = useContext(ExampleContext);
+  const { addFlashMessage } = useContext(ExampleContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,9 +20,7 @@ const CreatePost = (props) => {
         token: localStorage.getItem('complexappToken')
       });
       // Redirect to new post URL
-      addFlashMessage(
-        'congrats! you have successfully created a new post!!!!'
-      );
+      addFlashMessage('congrats! you have successfully created a new post!!!!');
       nav(`/post/${res.data}`);
       console.log('new post was created');
     } catch (err) {

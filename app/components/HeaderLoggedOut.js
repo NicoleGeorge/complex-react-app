@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Axios from 'axios';
+import ExampleContext from '../ExampleContext';
 
-const HeaderLoggedOut = ({ setLoggedIn }) => {
+const HeaderLoggedOut = () => {
+  const { setLoggedIn } = useContext(ExampleContext);
+
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
 

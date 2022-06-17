@@ -27,10 +27,10 @@ const Main = ({}) => {
   };
 
   return (
-    <ExampleContext.Provider value={addFlashMessage}>
+    <ExampleContext.Provider value={{ addFlashMessage, setLoggedIn }}>
       <BrowserRouter>
         <FlashMessages messages={flashMessages} />
-        <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+        <Header loggedIn={loggedIn} />
         <Routes>
           <Route path='/' element={loggedIn ? <Home /> : <HomeGuest />} />
           <Route path='/create-post' element={<CreatePost />} />
